@@ -1,5 +1,5 @@
 /*Google Font CDN Link*/
-@import url(https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B);
+@import url(https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbWZzUnpFRlBrZnRTQk5RTmJ1N1JoUXEyb2Nld3xBQ3Jtc0ttelV0Q2RJcXFZVkthaDVOX0tVRXFrb0FjQ1FhTUpWN21Tb3d5R3BvS3FvYjNWTVhiLXdMZU94WmJ6M2RKeWZYd1ZqaFlkWEhlY21OZWUtWW81NUNybWg3N2dzd1ZNZXRXYUd3RE5HbHk3U1VfQ21OWQ&q=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DPoppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600%26display%3Dswap%27%29%3B&v=xtK57s6QN28);
 
 *{
     margin: 0;
@@ -73,7 +73,6 @@ nav{
     font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
 }
 
-/* 19.45 */
 
 .nav-container .links{
     display: flex;
@@ -87,7 +86,7 @@ nav{
     margin: 0 20px;
     text-decoration: none;
     font-weight: 550;
-    transition: 0.3s linear;
+    transition:0.3s linear;
 }
 
 .nav-container .links a::before{
@@ -98,7 +97,7 @@ nav{
     width: 0%;
     height: 3px;
     background-color: #b74b4b;
-    transition: 0.2s linear;
+    transition:0.2s linear;
 }
 
 .nav-container .links a:hover::before{
@@ -117,7 +116,7 @@ nav{
     width: 100%;
     height: auto;
     backdrop-filter: blur(4px) brightness(40%);
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 20px black;
     transition: 0.2 linear;
 }
 
@@ -178,6 +177,24 @@ section .main-container{
     }
 }
 
+/* @keyframes words {
+        0%,20% {
+            content: "Frontend Developer";
+        }
+        21%,40%{
+            content: "Database Manager";
+        }
+        41%,60%{
+            content: "Web Designer";
+        }
+        61%,80%{
+            content: "Free Lancer";
+        }
+        81%,100%{
+            content: "Software Analyst";
+        }
+    } */
+
 .main-container .content{
     color: white;
     width: 40%;
@@ -192,16 +209,35 @@ section .main-container{
     text-shadow: 0 0 10px #b74b4b;
 }
 
-.content .typwriter{
+/* Add this to your existing CSS file */
+
+/* Fix the typewriter container */
+.content .typewriter{
     font-size: clamp(1rem, 1rem + 5vw,2.5rem);
     font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
 .content .typewriter-text{
     color: #b74b4b;
     text-shadow: 0 0 10px #b74b4b;
+    min-height: 1.2em;
 }
 
+/* Add the blinking cursor styles */
+.cursor {
+    display: inline-block;
+    background-color: #b74b4b;
+    margin-left: 3px;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
 .content p{
     font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
     margin: 10px 0;
@@ -283,7 +319,7 @@ section .title span{
 
 section .title span::before,
 section .title span::after{
-    content:'';
+    content: "";
     position: absolute;
     height: 3px;
     width: 100%;
@@ -334,7 +370,8 @@ section .button button{
     outline: none;
     padding: 8px 16px;
     border-radius: 4px;
-    font-size: 400;
+    font-size: 25px;
+    font-weight: 400;
     background: #b74b4b;
     color: #fff;
     border: 2px solid transparent;
@@ -343,7 +380,7 @@ section .button button{
 }
 
 section .button button:hover{
-   border-color: #b74b4b;
+    border-color: #b74b4b;
     background-color: #fff;
     color: #b74b4b;
 }
@@ -355,7 +392,7 @@ section .button button:hover{
     padding: 40px 0;
 }
 
-.skills .skilld-details{
+.skills .skills-details{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -369,11 +406,8 @@ section .button button:hover{
     color: white;
     text-align: justify;
 }
- .skills-details .text{
-    width: 50%;
- }
 
- .skills-details p{
+ .skills-details .experience{
     display: flex;
     align-items: center;
     margin: 0 10px;
@@ -417,6 +451,12 @@ section .button button:hover{
 
  .services .boxes{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+
+ .services .boxes .box{
+    margin: 20px 0;
     width: calc(100% / 3 - 20px);
     text-align: center;
     border-radius: 12px;
@@ -536,6 +576,7 @@ section .button button:hover{
         margin: 20px 0;
         width: calc(100% / 2 - 20px);
     }
+
 }
 
 @media (max-width: 900px){
@@ -615,7 +656,7 @@ section .button button:hover{
 }
 
 @media(max-width: 500px){
-    .main-container .image{
+    main-container .image{
         width: 50%;
         height: 60%;
         margin-bottom: 0px;
@@ -625,7 +666,7 @@ section .button button:hover{
         width: 80%;
     }
 
-    .main-container .button{
+    .main-container button{
         margin-top: 15px;
     }
 
