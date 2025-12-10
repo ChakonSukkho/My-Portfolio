@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Hamburger menu functions
 function openMenu() {
     const dropdown = document.querySelector('.dropdown');
     const hamburg = document.querySelector('.hamburg');
@@ -52,7 +53,9 @@ function openMenu() {
     
     dropdown.style.transform = 'translateY(0px)';
     hamburg.style.opacity = '0';
+    hamburg.style.pointerEvents = 'none';
     cancelBtn.style.opacity = '1';
+    cancelBtn.style.pointerEvents = 'auto';
 }
 
 function closeMenu() {
@@ -62,5 +65,15 @@ function closeMenu() {
     
     dropdown.style.transform = 'translateY(-500px)';
     hamburg.style.opacity = '1';
+    hamburg.style.pointerEvents = 'auto';
     cancelBtn.style.opacity = '0';
+    cancelBtn.style.pointerEvents = 'none';
 }
+
+// Close dropdown when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown .links a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+});
